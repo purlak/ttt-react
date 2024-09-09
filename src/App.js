@@ -1,16 +1,7 @@
 import { useState } from "react";
 
-function Square() {
-  const [value, setValue] = useState(null);
-
-  function handleClick() {
-    setValue("X");
-  }
-  return (
-    <button className="square" onClick={handleClick}>
-      {value}
-    </button>
-  );
+function Square({ value }) {
+  return <button className="square">{value}</button>;
 }
 
 export default function Board() {
@@ -19,19 +10,19 @@ export default function Board() {
   return (
     <>
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={board[0]} />
+        <Square value={board[1]} />
+        <Square value={board[2]} />
       </div>
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={board[3]} />
+        <Square value={board[4]} />
+        <Square value={board[5]} />
       </div>
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={board[6]} />
+        <Square value={board[7]} />
+        <Square value={board[8]} />
       </div>
     </>
   );
